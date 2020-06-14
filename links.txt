@@ -1,0 +1,10 @@
+1. SETUP IDE FOR ESP8266:- https://www.electronicwings.com/nodemcu/getting-started-with-nodemcu-using-arduino-ide
+2. ESP8266 FILE SYSTEM:- https://github.com/esp8266/arduino-esp8266fs-plugin
+3. BUTTON STATE CHANGE CODE/EXPLAIN:- https://www.arduino.cc/en/Tutorial/StateChangeDetection
+4.
+(A) WEBSOCKET WITH ESP8266:- https://tttapa.github.io/ESP8266/Chap14%20-%20WebSocket.html
+(B) WEBSOCKET LIBRARY:- https://github.com/gilmaimon/ArduinoWebsockets
+5. IFTTT GUIDE:- https://help.ifttt.com/hc/en-us/sections/360002945774-Applets-101
+
+
+ALL IMPORTANT LINKS WILL BE SHARED

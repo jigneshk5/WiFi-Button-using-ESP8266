@@ -1,0 +1,49 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>ifttt server</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<style>
+		html { 
+		font-family: Helvetica; 
+		display: inline-block; 
+		margin: 0px auto; 
+		text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="container text-center">
+		<div class="container mb-4 mt-4">
+			<h1>IFTTT Server</h1>
+			<h6>Using Client(STA) Mode</h6>
+		</div>
+		<div class="card">
+		  <div class="card-header bg-primary text-white">Click Count</div>
+		  <div class="card-body">
+			<h2><span id="count" class="badge badge-light">0</span></h2>
+		  </div>
+		</div>
+	</div>
+	<script>
+		var connection = new WebSocket('ws://'+location.hostname+':81/', ['arduino']);
+		
+		connection.onopen = function () {
+		  connection.send('websocket Client Connected');
+		  console.log('Connected to websocket server');
+		};
+		connection.onerror = function (error) {
+		  console.log('WebSocket Error ', error);
+		};
+		connection.onmessage = function (e) {
+		  console.log('count: ', e.data);
+		  if(e.data==5){
+			console.log("IFTTT webhook Triggered");  //pop up or alert on html page 
+		  }
+		  var count= document.getElementById('count');
+		  count.innerHTML=e.data;
+		};
+	</script>
+</body>
+</html>
